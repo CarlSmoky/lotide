@@ -1,11 +1,11 @@
 const assertEqual = function(actual, expected) {
-  let msg = '';
+  let result = true;
   if (actual === expected) {
-    msg = `🥑Assertion Passed: ${actual} === ${expected}`;
+    result = true;
   } else {
-    msg = `🍕Assertion Failed: ${actual} !== ${expected}`;
+    result = false;
   }
-  console.log(msg);
+  return result;
 };
 
 const eqArrays = (arr1, arr2) => {
@@ -31,7 +31,7 @@ const eqObjects = function(object1, object2) {
   const lengthObj2 = keyObj2.length;
   if (lengthObj1 === lengthObj2) {
     for (const key of keyObj1) {
-      if (object1[key].length > 0) {
+      if (Array.isArray(object1[key])) {
         result = eqArrays(object1[key], object2[key]);
       } else {
         result = assertEqual(object1[key], object2[key]);
