@@ -22,5 +22,7 @@ const countLetters = word => {
   return result;
 };
 
+module.exports = countLetters;
+
 countLetters('LHL');
 countLetters("lighthouse in the house");

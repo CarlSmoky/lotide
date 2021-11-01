@@ -19,6 +19,8 @@ const findKey = (obj, callback) => {
   return result;
 };
 
+module.exports = findKey;
+
 findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },
